@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.tabel_width {
+  margin: auto;
+  width: 90%;
+  overflow-x: scroll;
+}
+
+.even-row {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.odd-row {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.MuiBox-root.css-keq2b0 {
+  width: 65%;
+  padding: 20px 37px;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 8%;
+}
+
+.close_btn {
+  width: 112px !important;
+  height: 37px !important;
+  background: gray !important;
+  color: white !important;
+  font-size: 15px !important;
+}
+
+.review_btn {
+  background: green !important;
+  width: 110px !important;
+  height: 30px !important;
+  font-size: 11px !important;
+  color: white !important;
+}
+.tit-border {
+  border-bottom: 2px solid red;
+}
+.actions-column {
+  position: sticky;
+  right: 0;
+  background-color: white;
+  z-index: 1;
+}
+.actions-column-header {
+  position: sticky;
+  right: 0;
+  background-color: white;
+  z-index: 2;
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #1a6683fa;
+}
+
+.login-header {
+  background: #1a6683fa;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+.login p {
+  padding: 12px;
+  color: red;
+}
+.login label {
+  padding: 0px 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type='email'],
+.login input[type='password'] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+.login {
+  margin: 0 auto;
+  width: 35%;
+  margin-top: 30px;
+}
+
+.login-btn {
+  width: 112px !important;
+  height: 37px !important;
+  background: #1a6683fa !important;
+  color: white !important;
+  font-size: 15px !important;
+  border: unset !important;
+}
+
+.login-btn:hover {
+  background: #17c;
+}
+
+.login-btn:focus {
+  border-color: #05a;
+}
