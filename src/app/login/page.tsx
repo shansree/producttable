@@ -40,6 +40,7 @@ const LoginPage = () => {
         data
       );
       if (response.status === 200) {
+        localStorage.setItem('isAuthenticated', 'true');
         toast.success('Login successful!');
         router.push('/product');
       }

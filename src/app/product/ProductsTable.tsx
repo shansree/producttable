@@ -1,10 +1,11 @@
 // Added use client to make client component
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { Modal, Button, Typography, Box } from '@mui/material';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 // Assigning types for variable
 interface Review {
@@ -54,6 +55,15 @@ interface ProductsTableProps {
 }
 
 const ProductsTable: React.FC<ProductsTableProps> = ({ products }) => {
+
+  const router = useRouter();
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    if (!isAuthenticated) {
+      router.push('/login');
+    }
+  }, [router]);
+  
   // State to manage the modal open/close and the selected product
   const [open, setOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -68,11 +78,23 @@ const ProductsTable: React.FC<ProductsTableProps> = ({ products }) => {
     } catch (error) {
       console.error('Failed to fetch product details:', error);
     }
+    try {
+      const { data } = await axios.get(
+        `https://dummyjson.com/product`
+      );
+    console.log(data,'data');
+    
+    } catch (error) {
+      console.error('Failed to fetch product details:', error);
+    }
+
   };
   // Function to handle closing the modal
   const handleCloseModal = () => {
     setOpen(false);
   };
+
+  
   // Define columns for the DataGrid
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 90 },
@@ -101,6 +123,7 @@ const ProductsTable: React.FC<ProductsTableProps> = ({ products }) => {
     { field: 'tags', headerName: 'Tags', width: 200 },
     { field: 'brand', headerName: 'Brand', width: 150 },
   ];
+ 
 
   return (
     <div>
@@ -108,6 +131,8 @@ const ProductsTable: React.FC<ProductsTableProps> = ({ products }) => {
         <div className='title'>
           <span className='tit-border'>Product</span> Table
         </div>
+  
+        
         <DataGrid rows={products} columns={columns} />
         {/* Modal to display product reviews */}
         <Modal open={open} onClose={handleCloseModal}>
